@@ -1,0 +1,21 @@
+type List {
+    id: String!
+    title: String!
+    items(title: String): [ToDo]
+  }
+  
+  type ToDo {
+    id: String!
+    title: String!
+    description: String!
+  }
+  
+  type Query {
+    list: [ToDo]
+  }
+  
+  type Mutation {
+    createToDo(title: String, description: String): ToDo
+    updateToDo(id: String!, title: String, description: String): ToDo
+    deleteToDo(id: String!): String
+  }
